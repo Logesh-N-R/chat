@@ -1,0 +1,115 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Mar 19, 2022 at 05:55 PM
+-- Server version: 10.3.22-MariaDB-log
+-- PHP Version: 7.2.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `360948`
+--
+CREATE DATABASE IF NOT EXISTS `360948` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `360948`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userchats`
+--
+
+CREATE TABLE `userchats` (
+  `sno` int(11) NOT NULL,
+  `msg_from` int(11) NOT NULL,
+  `msg_to` int(11) NOT NULL,
+  `message` varchar(7000) CHARACTER SET utf32 COLLATE utf32_bin DEFAULT NULL,
+  `sent_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `userchats`
+--
+
+INSERT INTO `userchats` (`sno`, `msg_from`, `msg_to`, `message`, `sent_time`) VALUES
+(148, 11, 14, 'SGk=', '2022-03-19 12:20:36'),
+(146, 14, 11, 'SGVsbG8=', '2022-03-19 11:59:31'),
+(147, 10, 11, 'SGV5IGJybw==', '2022-03-19 12:05:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_register`
+--
+
+CREATE TABLE `user_register` (
+  `sno` int(11) NOT NULL,
+  `name` char(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user_register`
+--
+
+INSERT INTO `user_register` (`sno`, `name`, `email`, `phone`, `password`, `img`) VALUES
+(1, 'Loki', 'logeshnr17@gmail', '0987654321', '12345678', 'uploads/default.jpg'),
+(8, 'Name', 'name@gmail.com', '12345678979', '$2y$10$WAulSqsZgQ/ILd/PMbfqPu7OgNj3ozg0r2123SiSBgy8Irj93JMtO', 'uploads/default.jpeg'),
+(9, 'Logesh N R', 'loki@123.com', '654387512', '$2y$10$oCHH51WuRwyl1d0bqgUFkO/HKf.EpGgHeqjGdFUTpoyohZ3iWZXv.', 'uploads/9.jpg'),
+(10, 'Logesh Raj', 'rakki@g.co', '098765432', '$2y$10$WOHSmzNxvKOXXxzsbCxCY.Jn3hjdOPU76vWCDYHBdkXmrXx/LCO86', 'uploads/10.jpeg'),
+(11, 'Logesh N R', 'logeshnr17@gmail.com', '87645349156', '$2y$10$QPStBoS7HWVW264MiFpQX.EmWIOZIJxW8eN3cdDcqpF7qgO9h9orO', 'uploads/11.jpg'),
+(12, 'Venkatesh', 'Venkat4380@gmail.com', '07010891433', '$2y$10$1gHEWV1Cbv0vVQKro61gGOOSFiep0SCRuyWMAUC89W7KFqJXmgK5m', 'uploads/default.png'),
+(13, 'Raja', 'rajai998@gmail.com', '7418702110', '$2y$10$NsiSqqAS6VzV5tWQsCmVDeGNemCbE.YThmOXs7DW/0VbO17N3O.pm', 'uploads/default.jpg'),
+(14, 'Ramya M', 'ramyakohi998@gmail.com', '9876543210', '$2y$10$a8lL6Qg7znuI3NfAJ61b2.0WOpk6CgKCn0774Mm2nq8xhkpARplG2', 'uploads/14.jpg'),
+(15, 'New duplicate', 'Loki@123.com', '9876453158', '$2y$10$3FM2B46ZUoCfBW/Ns/.Pg.o3.14TwJ./SaLBfywXdklgbxOGA4H1m', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `userchats`
+--
+ALTER TABLE `userchats`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `user_register`
+--
+ALTER TABLE `user_register`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `userchats`
+--
+ALTER TABLE `userchats`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+
+--
+-- AUTO_INCREMENT for table `user_register`
+--
+ALTER TABLE `user_register`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
